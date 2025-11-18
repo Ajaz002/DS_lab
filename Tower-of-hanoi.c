@@ -1,23 +1,22 @@
+#include <stdio.h>
 
-// Write a C program for tower of hanoi
-
-#include<stdio.h>
-
-void tower_of_hanoi(int n, char frompeg, char topeg, char auxpeg) {
-    if(n==1) {
-        printf("Move disk 1 from peg %c to peg %c\n",frompeg,topeg);
+void TowerofHanoi(int n, char from, char to, char aux)
+{
+    if(n==1)
+    {
+        printf("\n Move %d from %c to %c\n",n,from,to);
         return;
     }
-    tower_of_hanoi(n-1, frompeg, auxpeg, topeg);
-    printf("Move disk %d from peg %c to peg %c\n",n,frompeg,topeg);
-    tower_of_hanoi(n-1, auxpeg, topeg, frompeg);
+    TowerofHanoi(n-1,from,aux,to);
+    printf("\n Move %d from %c to %c\n",n,from,to);
+    TowerofHanoi(n-1,aux,to,from);
 }
 
-int main() {
+void main()
+{
     int n;
-    printf("Enter the number of disks : ");
+    printf("Enter number of towers: ");
     scanf("%d",&n);
-    printf("Steps involved in solving are ...\n");
-    tower_of_hanoi(n,'A','C','B');
-    return 0;
+    printf("Steps are:- \n");
+    TowerofHanoi(n,'A','C','B');
 }
