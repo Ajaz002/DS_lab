@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 struct Employee {
+    char name[50];
     float monthly_salary;
 };
 
@@ -22,7 +23,9 @@ int main() {
     }
 
     for (i = 0; i < N; i++) {
-        printf("Enter monthly salary of employee %d: ", i + 1);
+        printf("\nEnter name of employee %d: ", i + 1);
+        scanf(" %[^\n]", employees[i].name);  
+        printf("Enter monthly salary of %s: ", employees[i].name);
         scanf("%f", &employees[i].monthly_salary);
         total += employees[i].monthly_salary * 12;
     }
