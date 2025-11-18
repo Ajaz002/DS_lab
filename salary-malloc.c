@@ -2,29 +2,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct Employee {
+    float monthly_salary;
+};
+
 int main() {
     int N, i;
-    float *salaries, total = 0.0;
+    float total = 0.0;
+    struct Employee *employees;
 
     printf("Enter the number of employees: ");
     scanf("%d", &N);
 
-    salaries = (float *)malloc(N * sizeof(float));
+    employees = (struct Employee *)malloc(N * sizeof(struct Employee));
 
-    if (salaries == NULL) {
+    if (employees == NULL) {
         printf("Memory allocation failed!\n");
         return 1;
     }
 
     for (i = 0; i < N; i++) {
         printf("Enter monthly salary of employee %d: ", i + 1);
-        scanf("%f", &salaries[i]);
-        total += salaries[i] * 12;  
+        scanf("%f", &employees[i].monthly_salary);
+        total += employees[i].monthly_salary * 12;
     }
 
     printf("\nTotal annual salary expenditure: %.2f\n", total);
 
-    free(salaries);
+    free(employees);
 
     return 0;
 }
