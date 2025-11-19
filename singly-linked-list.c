@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure
 struct Node {
     int data;
     struct Node* next;
@@ -9,7 +8,6 @@ struct Node {
 
 struct Node* head = NULL;
 
-// Insert at front
 void insertFront(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
@@ -18,7 +16,6 @@ void insertFront(int value) {
     printf("%d inserted at front\n", value);
 }
 
-// Insert at rear
 void insertRear(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
@@ -36,7 +33,6 @@ void insertRear(int value) {
     printf("%d inserted at rear\n", value);
 }
 
-// Delete from front
 void deleteFront() {
     if (head == NULL) {
         printf("List is empty, nothing to delete\n");
@@ -48,7 +44,6 @@ void deleteFront() {
     free(temp);
 }
 
-// Delete from rear
 void deleteRear() {
     if (head == NULL) {
         printf("List is empty, nothing to delete\n");
@@ -71,7 +66,6 @@ void deleteRear() {
     prev->next = NULL;
 }
 
-// Display the list
 void display() {
     if (head == NULL) {
         printf("List is empty\n");
@@ -86,7 +80,6 @@ void display() {
     printf("NULL\n");
 }
 
-// Main function with menu
 int main() {
     int choice, value;
     while (1) {
@@ -128,4 +121,5 @@ int main() {
     }
     return 0;
 }
+
 
