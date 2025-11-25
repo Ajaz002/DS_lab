@@ -9,7 +9,6 @@ struct Node {
 
 struct Node* head = NULL;
 
-// Function to insert at end
 void insert(int value) {
     struct Node* newNode = malloc(sizeof(struct Node));
     newNode->data = value;
@@ -26,7 +25,6 @@ void insert(int value) {
     }
 }
 
-// Function to display list
 void display() {
     struct Node* temp = head;
     if (temp == NULL) {
@@ -41,7 +39,6 @@ void display() {
     printf("NULL\n");
 }
 
-// Function to find element
 void findElement(int key) {
     struct Node* temp = head;
     while (temp != NULL) {
@@ -54,7 +51,6 @@ void findElement(int key) {
     printf("Element %d not found\n", key);
 }
 
-// Function to get length
 void getLength() {
     int count = 0;
     struct Node* temp = head;
@@ -102,4 +98,5 @@ int main() {
         }
     }
     return 0;
+
 }
